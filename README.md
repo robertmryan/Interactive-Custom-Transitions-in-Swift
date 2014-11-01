@@ -1,12 +1,10 @@
 ## Interactive Custom Transitions Demo in Swift
 
-### A NSOperation-based implementation of delegate-based NSURLSession
-
 --
 
 This is an demonstration of a Custom Transitions. 
 
-The idea was to illustrate a custom "presentation" transition from the root scene to a navigation controller. The goal was to allow interactive gestures to swipe between three different scenes, A, B, and C underneath the navigation controller. The goal was also to allow the user to swipe back to the root view controller to.
+The idea was to illustrate a custom "presentation" transition from the root scene to a navigation controller. The goal was to allow interactive gestures to swipe between three different scenes, A, B, and C underneath the navigation controller to illustrate custom "push" and "pop" transitions between the navigation controller's scenes. The goal was also to allow the user to swipe back to the root view controller, too.
 
 To implement this, the suggestion was to implement a custom subclass of the navigation controller that would instantiate the custom animation controllers and interaction controllers as necessary:
 
