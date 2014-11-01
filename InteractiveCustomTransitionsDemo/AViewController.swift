@@ -10,6 +10,10 @@
 
 import UIKit
 
+// If you want to allow navigation controller to automatically detect whether you can swipe right to left
+// to push to the "next" scene, you should conform to `CustomNavigationControllerDelegate` and then
+// implement `pushToNextScene`.
+
 class AViewController: UIViewController, CustomNavigationControllerDelegate {
 
     func pushToNextScene() {
