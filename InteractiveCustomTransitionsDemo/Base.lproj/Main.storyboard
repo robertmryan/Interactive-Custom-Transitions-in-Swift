@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RootViewController" customModule="InteractiveCustomTransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,174 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEZ-nZ-Rx2">
+                                <rect key="frame" x="526" y="28" width="58" height="30"/>
+                                <state key="normal" title="Proceed">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QXa-IR-oe9" kind="presentation" id="mCW-Fb-BvZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2D-t1-UHx">
+                                <rect key="frame" x="16" y="28" width="568" height="552"/>
+                                <mutableString key="text">This is root scene.  By design, the only way to proceed to the next scene (i.e. presenting a view controller whose first scene is scene A) is by pressing the "Proceed" button, above.  Throughout this demo, I'll use a fade transition to illustrate that we are, indeed, doing a custom transition.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cEZ-nZ-Rx2" secondAttribute="trailing" constant="16" id="926-dg-skW"/>
+                            <constraint firstAttribute="trailing" secondItem="I2D-t1-UHx" secondAttribute="trailing" constant="16" id="TNF-C4-TbL"/>
+                            <constraint firstItem="I2D-t1-UHx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="b4g-Ad-o1l"/>
+                            <constraint firstItem="I2D-t1-UHx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ckL-aJ-Leu"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="I2D-t1-UHx" secondAttribute="bottom" constant="20" id="odG-zx-D2V"/>
+                            <constraint firstItem="cEZ-nZ-Rx2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="xgL-Wy-9qB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-609" y="539"/>
+        </scene>
+        <!--A-->
+        <scene sceneID="kNU-mf-Ff3">
+            <objects>
+                <viewController id="Qhh-V7-dvQ" customClass="AViewController" customModule="InteractiveCustomTransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VYx-qw-wEJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="kPx-FW-mmT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Qw-bP-ivF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnk-My-fnt">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <mutableString key="text">This is scene A within navigation controller.  From here you can either click "cancel" to dismiss this scene's navigation controller (i.e. return the the root), or you can click on the B button to push to scene B. You can also swipe left to right to dismiss navigation controller. You can also swipe right to left to push to B.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gnk-My-fnt" secondAttribute="trailing" constant="16" id="Yn8-52-z7w"/>
+                            <constraint firstItem="gnk-My-fnt" firstAttribute="top" secondItem="VYx-qw-wEJ" secondAttribute="bottom" constant="8" id="fpM-Qr-SwB"/>
+                            <constraint firstItem="gnk-My-fnt" firstAttribute="leading" secondItem="8Qw-bP-ivF" secondAttribute="leading" constant="16" id="iFp-q9-XPE"/>
+                            <constraint firstItem="kPx-FW-mmT" firstAttribute="top" secondItem="gnk-My-fnt" secondAttribute="bottom" constant="20" id="lEF-4L-z6C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="A" id="wAN-V4-5Yd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2xL-bH-dYH">
+                            <connections>
+                                <action selector="pressedCancelButton:" destination="Qhh-V7-dvQ" id="sId-Lw-NRU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="B" id="3IF-Pg-X8h">
+                            <connections>
+                                <segue destination="oLO-iU-e2a" kind="show" identifier="PushToB" id="R9t-Le-irp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ocd-FH-k0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="539"/>
+        </scene>
+        <!--B-->
+        <scene sceneID="gTr-ne-pEy">
+            <objects>
+                <viewController id="oLO-iU-e2a" customClass="BViewController" customModule="InteractiveCustomTransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ezw-GS-S2O"/>
+                        <viewControllerLayoutGuide type="bottom" id="ylU-eW-cu3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aEI-nd-Tmi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-dt-kQ2">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <string key="text">This is scene B within navigation controller.  From here you can either click "back" button to pop to scene A, or press "C" button to push to "C". You can also swipe left to right to pop to "A". You can also swipe right to left to push to "C".</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GeB-dt-kQ2" secondAttribute="trailing" constant="16" id="0gc-OR-hCy"/>
+                            <constraint firstItem="GeB-dt-kQ2" firstAttribute="top" secondItem="Ezw-GS-S2O" secondAttribute="bottom" constant="8" id="IuZ-o2-PGp"/>
+                            <constraint firstItem="GeB-dt-kQ2" firstAttribute="leading" secondItem="aEI-nd-Tmi" secondAttribute="leading" constant="16" id="d3G-bx-7F1"/>
+                            <constraint firstItem="ylU-eW-cu3" firstAttribute="top" secondItem="GeB-dt-kQ2" secondAttribute="bottom" constant="20" id="vnr-yh-kaO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="B" id="2ww-GV-BQQ">
+                        <barButtonItem key="rightBarButtonItem" title="C" id="7Fr-u7-xfn">
+                            <connections>
+                                <segue destination="2Ud-ef-PnJ" kind="show" identifier="PushToC" id="BCZ-FB-9WM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKk-oY-CDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1627" y="539"/>
+        </scene>
+        <!--C-->
+        <scene sceneID="8fu-q9-2WR">
+            <objects>
+                <viewController id="2Ud-ef-PnJ" customClass="CViewController" customModule="InteractiveCustomTransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c2Q-I7-6ha"/>
+                        <viewControllerLayoutGuide type="bottom" id="o4D-WU-UoK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WhD-0T-pgP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIs-jq-HmR">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <string key="text">This is scene C within navigation controller.  From here you can either press "back" button to pop back to scene B or swipe left to right.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XIs-jq-HmR" firstAttribute="top" secondItem="c2Q-I7-6ha" secondAttribute="bottom" constant="8" id="8Pk-m3-yhv"/>
+                            <constraint firstAttribute="trailing" secondItem="XIs-jq-HmR" secondAttribute="trailing" constant="16" id="FXF-1g-osN"/>
+                            <constraint firstItem="o4D-WU-UoK" firstAttribute="top" secondItem="XIs-jq-HmR" secondAttribute="bottom" constant="20" id="gM9-Bo-xQG"/>
+                            <constraint firstItem="XIs-jq-HmR" firstAttribute="leading" secondItem="WhD-0T-pgP" secondAttribute="leading" constant="16" id="oR9-dc-UWQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="C" id="1Ma-Rg-6zb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFC-0z-AwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2383" y="539"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="SzN-ve-Juq">
+            <objects>
+                <navigationController id="QXa-IR-oe9" customClass="CustomNavigationController" customModule="InteractiveCustomTransitionsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IJD-S2-GFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qhh-V7-dvQ" kind="relationship" relationship="rootViewController" id="3tr-nG-ElS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FzB-fO-X2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="539"/>
         </scene>
     </scenes>
 </document>
