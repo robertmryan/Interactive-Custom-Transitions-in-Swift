@@ -1,8 +1,6 @@
 ## Interactive Custom Transitions Demo in Swift
 
---
-
-This is an demonstration of a Custom Transitions. 
+This is an demonstration of a Custom Transitions and Interactive Custom Transitions.
 
 The idea was to illustrate a custom "presentation" transition from the root scene to a navigation controller. The goal was to allow interactive gestures to swipe between three different scenes, A, B, and C underneath the navigation controller to illustrate custom "push" and "pop" transitions between the navigation controller's scenes. The goal was also to allow the user to swipe back to the root view controller, too.
 
@@ -28,7 +26,7 @@ See http://stackoverflow.com/questions/26680311/interactive-delegate-methods-nev
 
 This is for illustrative purposes only.
 
-Developed in Xcode 6.1 for iOS 8.0+, also tested on Xcode 6.0 Beta.
+Developed in Swift on Xcode 6.1 for iOS 8.1. Theoretically it should work fine in iOS 7.0+. Also, the basic ideas are equally applicable for both Swift and Objective-C.
 
 ## License
 
