@@ -113,15 +113,14 @@ class CustomNavigationController: UINavigationController, UIViewControllerTransi
 
 class ForwardAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     
     func animateTransition(context: UIViewControllerContextTransitioning) {
         let toView = context.viewControllerForKey(UITransitionContextToViewControllerKey)?.view
-        let fromView = context.viewControllerForKey(UITransitionContextFromViewControllerKey)?.view
         
-        context.containerView().addSubview(toView!)
+        context.containerView()?.addSubview(toView!)
         
         toView?.alpha = 0.0
         
@@ -137,7 +136,7 @@ class ForwardAnimator : NSObject, UIViewControllerAnimatedTransitioning {
 
 class BackAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     
@@ -145,7 +144,7 @@ class BackAnimator : NSObject, UIViewControllerAnimatedTransitioning {
         let toView = context.viewControllerForKey(UITransitionContextToViewControllerKey)?.view
         let fromView = context.viewControllerForKey(UITransitionContextFromViewControllerKey)?.view
         
-        context.containerView().insertSubview(toView!, belowSubview: fromView!)
+        context.containerView()?.insertSubview(toView!, belowSubview: fromView!)
         
         UIView.animateWithDuration(transitionDuration(context), animations: {
             fromView?.alpha = 0.0
