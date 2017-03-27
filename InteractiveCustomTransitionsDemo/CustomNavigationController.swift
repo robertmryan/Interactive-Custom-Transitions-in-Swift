@@ -26,7 +26,7 @@ import UIKit.UIGestureRecognizerSubclass
 
 class CustomNavigationController: UINavigationController {
     
-    // If you arenot doing custom transition to the initial navigation controller, you can
+    // If you are not doing custom transition to the initial navigation controller, you can
     // comment out the following three routines, as well as the `UIViewControllerTransitioningDelegate`
     // extension and `UIPresentationController` subclass below.
     
