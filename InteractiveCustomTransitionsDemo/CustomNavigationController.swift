@@ -11,7 +11,16 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
+/// Custom Navigation Controller Protocol
+
 @objc protocol CustomNavigationControllerDelegate {
+    
+    /// Push to next scene
+    ///
+    /// If the view controller wants to enjoy swipe from right edge to push to the next scene,
+    /// it has to implement `pushToNextScene` that initiates that segue (or programmatic 
+    /// `show` or `push`).
+    
     func pushToNextScene()
 }
 
@@ -49,25 +58,23 @@ class CustomNavigationController: UINavigationController {
         view.addGestureRecognizer(right);
     }
     
-    var interactionController: UIPercentDrivenInteractiveTransition?
+    fileprivate var interactionController: UIPercentDrivenInteractiveTransition?
     
     func handleSwipeFromLeft(_ gesture: UIScreenEdgePanGestureRecognizer) {
         let percent = gesture.translation(in: gesture.view!).x / gesture.view!.bounds.size.width
         
         if gesture.state == .began {
-            interactionController = UIPercentDrivenInteractiveTransition()
-            if viewControllers.count > 1 {
-                popViewController(animated: true)
-            } else {
+            // if the navigation controller was, itself, presented with a custom transition,
+            // you could remove the `guard` statement and initiate the `dismiss` of the navigation
+            // controller much like we interactively pop.
+
+            guard viewControllers.count > 1 else {
                 gesture.state = .cancelled
-                interactionController = nil
-                
-                // if the navigation controller was, itself, presented with a custom transition,
-                // you could remove the cancelation of the gesture above and initiate the dismissal
-                // like shown below, if you wanted.
-                //
-                // dismiss(animated: true)
+                return
             }
+            
+            interactionController = UIPercentDrivenInteractiveTransition()
+            popViewController(animated: true)
         } else if gesture.state == .changed {
             interactionController?.update(percent)
         } else if gesture.state == .ended {
@@ -133,23 +140,23 @@ extension CustomNavigationController: UINavigationControllerDelegate {
 //    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return ForwardAnimator()
 //    }
-//    
+//
 //    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return BackAnimator()
 //    }
-//    
+//
 //    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 //        return interactionController
 //    }
-//    
+//
 //    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 //        return interactionController
 //    }
-//    
+//
 //    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
 //        return PresentationController(presentedViewController: presented, presenting: presenting)
 //    }
-//    
+//
 //}
 //
 //class PresentationController: UIPresentationController {
@@ -171,7 +178,6 @@ class ForwardAnimator : NSObject, UIViewControllerAnimatedTransitioning {
         
         UIView.animate(withDuration: transitionDuration(using: context), animations: {
             toView.alpha = 1.0
-            return
         }, completion: { finished in
             context.completeTransition(!context.transitionWasCancelled)
         })
@@ -193,7 +199,6 @@ class BackAnimator : NSObject, UIViewControllerAnimatedTransitioning {
         
         UIView.animate(withDuration: transitionDuration(using: context), animations: {
             fromView.alpha = 0.0
-            return
         }, completion: { finished in
             context.completeTransition(!context.transitionWasCancelled)
         })
