@@ -17,7 +17,7 @@ import UIKit
 class BViewController: UIViewController, CustomNavigationControllerDelegate {
 
     func pushToNextScene() {
-        performSegueWithIdentifier("PushToC", sender: self)
+        performSegue(withIdentifier: "PushToC", sender: self)
     }
 
 }

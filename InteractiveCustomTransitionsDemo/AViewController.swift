@@ -17,11 +17,11 @@ import UIKit
 class AViewController: UIViewController, CustomNavigationControllerDelegate {
 
     func pushToNextScene() {
-        performSegueWithIdentifier("PushToB", sender: self)
+        performSegue(withIdentifier: "PushToB", sender: self)
     }
 
-    @IBAction func pressedCancelButton(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func pressedCancelButton(_ sender: AnyObject) {
+        navigationController?.dismiss(animated: true)
     }
     
 }

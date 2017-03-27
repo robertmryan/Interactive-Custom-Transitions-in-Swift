@@ -11,23 +11,12 @@
 		83395CCB1A047A0E00BEA60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83395CC91A047A0E00BEA60F /* Main.storyboard */; };
 		83395CCD1A047A0E00BEA60F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83395CCC1A047A0E00BEA60F /* Images.xcassets */; };
 		83395CD01A047A0E00BEA60F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83395CCE1A047A0E00BEA60F /* LaunchScreen.xib */; };
-		83395CDC1A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CDB1A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.swift */; };
 		83395CE61A047A2400BEA60F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CE51A047A2400BEA60F /* CustomNavigationController.swift */; };
 		83395CE81A047A3E00BEA60F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CE71A047A3E00BEA60F /* RootViewController.swift */; };
 		83395CEA1A047A4F00BEA60F /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CE91A047A4F00BEA60F /* AViewController.swift */; };
 		83395CEC1A047A5900BEA60F /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CEB1A047A5900BEA60F /* BViewController.swift */; };
 		83395CEE1A047A6300BEA60F /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83395CED1A047A6300BEA60F /* CViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		83395CD61A047A0E00BEA60F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 83395CB81A047A0E00BEA60F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 83395CBF1A047A0E00BEA60F;
-			remoteInfo = InteractiveCustomTransitionsDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		83395CC01A047A0E00BEA60F /* InteractiveCustomTransitionsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveCustomTransitionsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,9 +25,6 @@
 		83395CCA1A047A0E00BEA60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83395CCC1A047A0E00BEA60F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83395CCF1A047A0E00BEA60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		83395CD51A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractiveCustomTransitionsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83395CDA1A047A0E00BEA60F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83395CDB1A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveCustomTransitionsDemoTests.swift; sourceTree = "<group>"; };
 		83395CE51A047A2400BEA60F /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		83395CE71A047A3E00BEA60F /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		83395CE91A047A4F00BEA60F /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
@@ -55,13 +41,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83395CD21A047A0E00BEA60F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,7 +49,6 @@
 			children = (
 				83395CEF1A047DD500BEA60F /* README.md */,
 				83395CC21A047A0E00BEA60F /* InteractiveCustomTransitionsDemo */,
-				83395CD81A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests */,
 				83395CC11A047A0E00BEA60F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				83395CC01A047A0E00BEA60F /* InteractiveCustomTransitionsDemo.app */,
-				83395CD51A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,23 +86,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83395CD81A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				83395CDB1A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.swift */,
-				83395CD91A047A0E00BEA60F /* Supporting Files */,
-			);
-			path = InteractiveCustomTransitionsDemoTests;
-			sourceTree = "<group>";
-		};
-		83395CD91A047A0E00BEA60F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				83395CDA1A047A0E00BEA60F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,24 +106,6 @@
 			productReference = 83395CC01A047A0E00BEA60F /* InteractiveCustomTransitionsDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		83395CD41A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83395CE21A047A0E00BEA60F /* Build configuration list for PBXNativeTarget "InteractiveCustomTransitionsDemoTests" */;
-			buildPhases = (
-				83395CD11A047A0E00BEA60F /* Sources */,
-				83395CD21A047A0E00BEA60F /* Frameworks */,
-				83395CD31A047A0E00BEA60F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83395CD71A047A0E00BEA60F /* PBXTargetDependency */,
-			);
-			name = InteractiveCustomTransitionsDemoTests;
-			productName = InteractiveCustomTransitionsDemoTests;
-			productReference = 83395CD51A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,15 +114,12 @@
 			attributes = {
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Robert Ryan";
 				TargetAttributes = {
 					83395CBF1A047A0E00BEA60F = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					83395CD41A047A0E00BEA60F = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 83395CBF1A047A0E00BEA60F;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -198,7 +137,6 @@
 			projectRoot = "";
 			targets = (
 				83395CBF1A047A0E00BEA60F /* InteractiveCustomTransitionsDemo */,
-				83395CD41A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,13 +149,6 @@
 				83395CCB1A047A0E00BEA60F /* Main.storyboard in Resources */,
 				83395CD01A047A0E00BEA60F /* LaunchScreen.xib in Resources */,
 				83395CCD1A047A0E00BEA60F /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83395CD31A047A0E00BEA60F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,23 +168,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83395CD11A047A0E00BEA60F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83395CDC1A047A0E00BEA60F /* InteractiveCustomTransitionsDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		83395CD71A047A0E00BEA60F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 83395CBF1A047A0E00BEA60F /* InteractiveCustomTransitionsDemo */;
-			targetProxy = 83395CD61A047A0E00BEA60F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		83395CC91A047A0E00BEA60F /* Main.storyboard */ = {
@@ -288,8 +203,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -298,6 +215,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -331,8 +249,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +260,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -349,6 +270,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -361,6 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertmryan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -372,36 +295,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertmryan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		83395CE31A047A0E00BEA60F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = InteractiveCustomTransitionsDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.robertmryan.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractiveCustomTransitionsDemo.app/InteractiveCustomTransitionsDemo";
-			};
-			name = Debug;
-		};
-		83395CE41A047A0E00BEA60F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = InteractiveCustomTransitionsDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.robertmryan.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractiveCustomTransitionsDemo.app/InteractiveCustomTransitionsDemo";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -422,15 +316,6 @@
 			buildConfigurations = (
 				83395CE01A047A0E00BEA60F /* Debug */,
 				83395CE11A047A0E00BEA60F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83395CE21A047A0E00BEA60F /* Build configuration list for PBXNativeTarget "InteractiveCustomTransitionsDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83395CE31A047A0E00BEA60F /* Debug */,
-				83395CE41A047A0E00BEA60F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
