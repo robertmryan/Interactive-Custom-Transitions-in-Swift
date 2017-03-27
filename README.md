@@ -8,7 +8,7 @@ There's also code if you wanted to have a custom transition as the navigation co
 
 To implement this, the suggestion was to implement a custom subclass of the navigation controller that would instantiate the custom animation controllers and interaction controllers as necessary:
 
-<img src="http://i.stack.imgur.com/TCYGC.png" \>
+![schematic](http://i.stack.imgur.com/TCYGC.png)
 
 The heart of this is entirely in the custom navigation controller which:
 
