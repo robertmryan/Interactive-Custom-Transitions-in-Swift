@@ -51,11 +51,11 @@ class CustomNavigationController: UINavigationController {
         
         let left = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleSwipeFromLeft(_:)))
         left.edges = .left
-        view.addGestureRecognizer(left);
+        view.addGestureRecognizer(left)
         
         let right = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleSwipeFromRight(_:)))
         right.edges = .right
-        view.addGestureRecognizer(right);
+        view.addGestureRecognizer(right)
     }
     
     fileprivate var interactionController: UIPercentDrivenInteractiveTransition?
@@ -67,7 +67,7 @@ class CustomNavigationController: UINavigationController {
             // if the navigation controller was, itself, presented with a custom transition,
             // you could remove the `guard` statement and initiate the `dismiss` of the navigation
             // controller much like we interactively pop.
-
+            
             guard viewControllers.count > 1 else {
                 gesture.state = .cancelled
                 return
