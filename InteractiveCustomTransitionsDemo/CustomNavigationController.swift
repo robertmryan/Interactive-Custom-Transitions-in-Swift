@@ -26,23 +26,23 @@ import UIKit.UIGestureRecognizerSubclass
 
 class CustomNavigationController: UINavigationController {
     
-    // If you want to do a custom transition to the initial navigation controller,
-    // comment out the following routines, as well as the `UIViewControllerTransitioningDelegate`
+    // If you arenot doing custom transition to the initial navigation controller, you can
+    // comment out the following three routines, as well as the `UIViewControllerTransitioningDelegate`
     // extension and `UIPresentationController` subclass below.
-    //
-    // public required init?(coder aDecoder: NSCoder) {
-    //     super.init(coder: aDecoder)
-    //     configure()
-    // }
-    //
-    // override init(rootViewController: UIViewController) {
-    //     super.init(rootViewController: rootViewController)
-    //     configure()
-    // }
-    //
-    // private func configure() {
-    //     transitioningDelegate = self   // for presenting the original navigation controller
-    // }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configure()
+    }
+    
+    override init(rootViewController: UIViewController) {
+        super.init(rootViewController: rootViewController)
+        configure()
+    }
+    
+    private func configure() {
+        transitioningDelegate = self   // for presenting the original navigation controller
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,17 +64,20 @@ class CustomNavigationController: UINavigationController {
         let percent = gesture.translation(in: gesture.view!).x / gesture.view!.bounds.size.width
         
         if gesture.state == .began {
-            // if the navigation controller was, itself, presented with a custom transition,
-            // you could remove the `guard` statement and initiate the `dismiss` of the navigation
-            // controller much like we interactively pop.
-            
-            guard viewControllers.count > 1 else {
-                gesture.state = .cancelled
-                return
-            }
+            // if the navigation controller wasn't, itself, presented with a custom transition,
+            // you insert this `guard` statement to prevent interactive dismissal performed below.
+            //
+            // guard viewControllers.count > 1 else {
+            //     gesture.state = .cancelled
+            //     return
+            // }
             
             interactionController = UIPercentDrivenInteractiveTransition()
-            popViewController(animated: true)
+            if viewControllers.count > 1 {
+                popViewController(animated: true)
+            } else {
+                dismiss(animated: true)
+            }
         } else if gesture.state == .changed {
             interactionController?.update(percent)
         } else if gesture.state == .ended {
@@ -112,6 +115,10 @@ class CustomNavigationController: UINavigationController {
 }
 
 // MARK: - UINavigationControllerDelegate
+//
+// Use this for custom transitions as you push/pop between the various child view controllers 
+// of the navigation controller. If you don't need a custom animation there, you can comment this
+// out.
 
 extension CustomNavigationController: UINavigationControllerDelegate {
     
@@ -131,37 +138,41 @@ extension CustomNavigationController: UINavigationControllerDelegate {
     
 }
 
-//// MARK: - UIViewControllerTransitioningDelegate
-////
-//// This is needed for the animation when we initially present the navigation controller
+// MARK: - UIViewControllerTransitioningDelegate
 //
-//extension CustomNavigationController: UIViewControllerTransitioningDelegate {
-//
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return ForwardAnimator()
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return BackAnimator()
-//    }
-//
-//    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-//        return interactionController
-//    }
-//
-//    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-//        return interactionController
-//    }
-//
-//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-//        return PresentationController(presentedViewController: presented, presenting: presenting)
-//    }
-//
-//}
-//
-//class PresentationController: UIPresentationController {
-//    override var shouldRemovePresentersView: Bool { return true }
-//}
+// This is needed for the animation when we initially present the navigation controller. 
+// If you're only looking for custom animations as you push/pop between the child view
+// controllers of the navigation controller, this is not needed. This is only for the 
+// custom transition of the initial `present` and `dismiss` of the navigation controller 
+// itself.
+
+extension CustomNavigationController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ForwardAnimator()
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BackAnimator()
+    }
+
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactionController
+    }
+
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactionController
+    }
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+
+}
+
+class PresentationController: UIPresentationController {
+    override var shouldRemovePresentersView: Bool { return true }
+}
 
 class ForwardAnimator : NSObject, UIViewControllerAnimatedTransitioning {
     
